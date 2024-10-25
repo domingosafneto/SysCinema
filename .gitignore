@@ -1,0 +1,71 @@
+# Compiled output
+/bin/
+//obj/
+
+# User-specific files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode/
+.vscode-test/
+
+# Visual Studio directories
+.vs/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# User-specific files
+*.rsuser
+*.suo
+*.userosscache
+
+# IIS Express
+/.vs/Config/applicationhost.config
+
+# Log files
+*.log
+
+# Local history for Visual Studio
+.vscode/.history/
+
+# Dotnet specific
+**/Properties/launchSettings.json
+
+# Dependency folders
+**/node_modules/
+**/bower_components/
+
+# JetBrains Rider
+.idea/
+.idea_modules/
+
+# Resharper files
+*.DotSettings.user
+
+# NPM Packages
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Other
+.DS_Store
