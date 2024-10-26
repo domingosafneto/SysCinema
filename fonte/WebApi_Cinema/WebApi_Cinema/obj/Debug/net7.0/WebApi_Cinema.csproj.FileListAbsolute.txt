@@ -1,0 +1,8 @@
+C:\Users\domin\source\repos\SysCinema\fonte\WebApi_Cinema\WebApi_Cinema\obj\Debug\net7.0\WebApi_Cinema.csproj.AssemblyReference.cache
+C:\Users\domin\source\repos\SysCinema\fonte\WebApi_Cinema\WebApi_Cinema\obj\Debug\net7.0\WebApi_Cinema.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\domin\source\repos\SysCinema\fonte\WebApi_Cinema\WebApi_Cinema\obj\Debug\net7.0\WebApi_Cinema.AssemblyInfoInputs.cache
+C:\Users\domin\source\repos\SysCinema\fonte\WebApi_Cinema\WebApi_Cinema\obj\Debug\net7.0\WebApi_Cinema.AssemblyInfo.cs
+C:\Users\domin\source\repos\SysCinema\fonte\WebApi_Cinema\WebApi_Cinema\obj\Debug\net7.0\WebApi_Cinema.csproj.CoreCompileInputs.cache
+C:\Users\domin\source\repos\SysCinema\fonte\WebApi_Cinema\WebApi_Cinema\obj\Debug\net7.0\WebApi_Cinema.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\domin\source\repos\SysCinema\fonte\WebApi_Cinema\WebApi_Cinema\obj\Debug\net7.0\WebApi_Cinema.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\domin\source\repos\SysCinema\fonte\WebApi_Cinema\WebApi_Cinema\obj\Debug\net7.0\WebApi_Cinema.sourcelink.json
