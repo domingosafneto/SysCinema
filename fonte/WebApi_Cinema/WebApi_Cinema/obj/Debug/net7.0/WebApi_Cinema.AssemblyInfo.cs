@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebApi_Cinema")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c5dcad9df8a4a20857bf7481fa2732773ece62e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9be20bc54c1a077a1dab8469fbe2b1ef3280864")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebApi_Cinema")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebApi_Cinema")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

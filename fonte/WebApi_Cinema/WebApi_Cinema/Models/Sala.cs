@@ -9,6 +9,6 @@
         public string Descricao { get; set; }
 
         
-        public ICollection<SalaFilme> SalaFilmes { get; set; }
+        public ICollection<SalaFilme> SalaFilmes { get; set; } = new List<SalaFilme>();
     }
 }

@@ -1,4 +1,4 @@
-
+using Microsoft.EntityFrameworkCore;
 using WebApi_Cinema.Data;
 
 namespace WebApi_Cinema
@@ -20,11 +20,9 @@ namespace WebApi_Cinema
             builder.Services.AddDbContext<Api_DbContext>(options =>
                 options.UseMySql(
                     builder.Configuration.GetConnectionString("DefaultConnection"),
-                    new MySqlServerVersion(new Version(8, 0, 21)) // Versão do MySQL
+                    new MySqlServerVersion(new Version(8, 0, 40)) 
                 )
             );
-
-
 
             var app = builder.Build();
 

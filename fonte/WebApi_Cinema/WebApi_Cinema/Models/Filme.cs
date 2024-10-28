@@ -8,9 +8,9 @@
 
         public string? Diretor { get; set; }
 
-        public int Duracao { get; set; }
+        public int Duracao { get; set; }  // minutos
 
         
-        public ICollection<SalaFilme> SalaFilmes { get; set; }
+        public ICollection<SalaFilme> SalaFilmes { get; set; } = new List<SalaFilme>();
     }
 }
