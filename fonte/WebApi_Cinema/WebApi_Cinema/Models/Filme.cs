@@ -13,9 +13,6 @@ namespace WebApi_Cinema.Models
 
         public string? Diretor { get; set; }
 
-        public int Duracao { get; set; }  // minutos
-
-        
-      //  public ICollection<SalaFilme> SalaFilmes { get; set; } = new List<SalaFilme>();
+        public int Duracao { get; set; }  
     }
 }

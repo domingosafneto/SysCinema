@@ -26,6 +26,8 @@ namespace WebApi_Cinema
             );
 
             builder.Services.AddScoped<FilmeService>();
+            builder.Services.AddScoped<SalaService>();
+            builder.Services.AddScoped<GerenciamentoService>();
 
             var app = builder.Build();
 

@@ -5,8 +5,8 @@ using WebApi_Cinema.Services;
 
 namespace WebApi_Cinema.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class FilmeController : ControllerBase
     {
         private readonly FilmeService _filmeService;
@@ -17,47 +17,49 @@ namespace WebApi_Cinema.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Filme>>> GetAllFilmes()
+        public async Task<ActionResult<IEnumerable<Filme>>> GetFilmes()
         {
-            var filmes = await _filmeService.GetAllFilmesAsync();
+            var filmes = await _filmeService.GetFilmesAsync();
             return Ok(filmes);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Filme>> GetFilmeById(int id)
+        public async Task<ActionResult<Filme>> GetFilme(int id)
         {
             var filme = await _filmeService.GetFilmeByIdAsync(id);
-            if (filme == null)
-                return NotFound();
-
+            if (filme == null) return NotFound();
             return Ok(filme);
         }
 
         [HttpPost]
-        public async Task<ActionResult<Filme>> AddFilme(Filme filme)
+        public async Task<ActionResult<Filme>> CreateFilme(Filme filme)
         {
-            var createdFilme = await _filmeService.AddFilmeAsync(filme);
-            return CreatedAtAction(nameof(GetFilmeById), new { id = createdFilme.IdFilme }, createdFilme);
+            await _filmeService.CreateFilmeAsync(filme);
+            return CreatedAtAction(nameof(GetFilme), new { id = filme.IdFilme }, filme);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateFilme(int id, Filme updatedFilme)
+        public async Task<IActionResult> UpdateFilme(int id, Filme filme)
         {
-            var result = await _filmeService.UpdateFilmeAsync(id, updatedFilme);
-            if (result == null)
-                return NotFound();
+            if (id != filme.IdFilme) return BadRequest();
 
+            await _filmeService.UpdateFilmeAsync(filme);
             return NoContent();
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteFilme(int id)
         {
-            var isDeleted = await _filmeService.DeleteFilmeAsync(id);
-            if (!isDeleted)
-                return NotFound();
-
+            await _filmeService.DeleteFilmeAsync(id);
             return NoContent();
         }
+
+        [HttpGet("{id}/salas")]
+        public async Task<ActionResult<IEnumerable<Sala>>> GetSalasByFilmeId(int id)
+        {
+            var salas = await _filmeService.GetSalasByFilmeIdAsync(id);
+            return Ok(salas);
+        }
     }
+
 }

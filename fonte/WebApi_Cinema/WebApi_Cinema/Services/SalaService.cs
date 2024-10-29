@@ -13,50 +13,46 @@ namespace WebApi_Cinema.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<Sala>> GetAllSalasAsync()
+        public async Task<IEnumerable<Sala>> GetSalasAsync()
         {
-            return await _context.Salas.Include(s => s.SalaFilmes).ToListAsync();
+            return await _context.Salas.ToListAsync();
         }
 
-        public async Task<Sala?> GetSalaByIdAsync(int id)
+        public async Task<Sala> GetSalaByIdAsync(int id)
         {
-            return await _context.Salas
-                .Include(s => s.SalaFilmes)
-                .ThenInclude(sf => sf.Filme)
-                .FirstOrDefaultAsync(s => s.IdSala == id);
+            return await _context.Salas.FindAsync(id);
         }
 
-        public async Task<Sala> AddSalaAsync(Sala sala)
+        public async Task<Sala> CreateSalaAsync(Sala sala)
         {
             _context.Salas.Add(sala);
             await _context.SaveChangesAsync();
             return sala;
         }
 
-        public async Task<Sala?> UpdateSalaAsync(int id, Sala updatedSala)
+        public async Task UpdateSalaAsync(Sala sala)
         {
-            var existingSala = await _context.Salas.FindAsync(id);
-            if (existingSala == null)
-                return null;
-
-            existingSala.NumeroSala = updatedSala.NumeroSala;
-            existingSala.Descricao = updatedSala.Descricao;
-
-            _context.Salas.Update(existingSala);
+            _context.Entry(sala).State = EntityState.Modified;
             await _context.SaveChangesAsync();
-
-            return existingSala;
         }
 
-        public async Task<bool> DeleteSalaAsync(int id)
+        public async Task DeleteSalaAsync(int id)
         {
             var sala = await _context.Salas.FindAsync(id);
-            if (sala == null)
-                return false;
+            if (sala != null)
+            {
+                _context.Salas.Remove(sala);
+                await _context.SaveChangesAsync();
+            }
+        }
 
-            _context.Salas.Remove(sala);
-            await _context.SaveChangesAsync();
-            return true;
+        // traz os filmes de determinada sala
+        public async Task<IEnumerable<Filme>> GetFilmesBySalaIdAsync(int salaId)
+        {
+            return await _context.SalaFilmes
+                .Where(sf => sf.IdSala == salaId)
+                .Select(sf => sf.Filme)
+                .ToListAsync();
         }
     }
 }

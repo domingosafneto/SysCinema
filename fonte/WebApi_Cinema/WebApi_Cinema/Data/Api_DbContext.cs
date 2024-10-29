@@ -21,17 +21,17 @@ namespace WebApi_Cinema.Data
             
             modelBuilder.Entity<SalaFilme>()
                 .HasKey(sf => new { sf.IdSala, sf.IdFilme });
+           
+            modelBuilder.Entity<SalaFilme>()
+                .HasOne(sf => sf.Filme)
+                .WithMany() 
+                .HasForeignKey(sf => sf.IdFilme)
+                .OnDelete(DeleteBehavior.Cascade);
             
             modelBuilder.Entity<SalaFilme>()
                 .HasOne(sf => sf.Sala)
-                .WithMany(s => s.SalaFilmes)
+                .WithMany() 
                 .HasForeignKey(sf => sf.IdSala)
-                .OnDelete(DeleteBehavior.Cascade);
-
-            modelBuilder.Entity<SalaFilme>()
-                .HasOne(sf => sf.Filme)
-                .WithMany(f => f.SalaFilmes)
-                .HasForeignKey(sf => sf.IdFilme)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }
