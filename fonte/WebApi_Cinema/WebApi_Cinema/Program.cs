@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using WebApi_Cinema.Data;
+using WebApi_Cinema.Services;
 
 namespace WebApi_Cinema
 {
@@ -23,6 +24,8 @@ namespace WebApi_Cinema
                     new MySqlServerVersion(new Version(8, 0, 40)) 
                 )
             );
+
+            builder.Services.AddScoped<FilmeService>();
 
             var app = builder.Build();
 

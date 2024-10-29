@@ -1,6 +1,7 @@
 ﻿namespace WebApi_Cinema.Services
 {
-    public class OperacoesService
+    public class GerenciamentoService
     {
+
     }
 }
