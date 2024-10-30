@@ -45,14 +45,5 @@ namespace WebApi_Cinema.Services
                 await _context.SaveChangesAsync();
             }
         }
-
-        // traz as salas de determinado filme
-        public async Task<IEnumerable<Sala>> GetSalasByFilmeIdAsync(int filmeId)
-        {
-            return await _context.SalaFilmes
-                .Where(sf => sf.IdFilme == filmeId)
-                .Select(sf => sf.Sala)
-                .ToListAsync();
-        }
     }
 }

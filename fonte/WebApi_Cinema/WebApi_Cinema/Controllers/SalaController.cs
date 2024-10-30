@@ -58,12 +58,5 @@ namespace WebApi_Cinema.Controllers
             return NoContent();
         }
 
-        // GET: api/Sala/{id}/filmes
-        [HttpGet("{id}/filmes")]
-        public async Task<ActionResult<IEnumerable<Filme>>> GetFilmesBySalaId(int id)
-        {
-            var filmes = await _salaService.GetFilmesBySalaIdAsync(id);
-            return Ok(filmes);
-        }
     }
 }

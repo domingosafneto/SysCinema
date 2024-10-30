@@ -25,6 +25,7 @@ namespace WebApi_Cinema
                 )
             );
 
+            // registrando classes de serviço
             builder.Services.AddScoped<FilmeService>();
             builder.Services.AddScoped<SalaService>();
             builder.Services.AddScoped<GerenciamentoService>();

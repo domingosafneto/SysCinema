@@ -53,13 +53,6 @@ namespace WebApi_Cinema.Controllers
             await _filmeService.DeleteFilmeAsync(id);
             return NoContent();
         }
-
-        [HttpGet("{id}/salas")]
-        public async Task<ActionResult<IEnumerable<Sala>>> GetSalasByFilmeId(int id)
-        {
-            var salas = await _filmeService.GetSalasByFilmeIdAsync(id);
-            return Ok(salas);
-        }
     }
 
 }
